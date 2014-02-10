@@ -40,10 +40,10 @@ RUN bash -l -c 'gem install bundler'
 # Install Errbit
 RUN git clone https://github.com/errbit/errbit.git ~/errbit
 RUN bash -l -c 'cd ~/errbit; bundle install'
-RUN bash -l -c 'mongod --dbpath /mongodb/data --logpath /mongodb/log/mongo.log &'; bash -l -c 'cd ~/errbit; rake errbit:bootstrap';
+#RUN bash -l -c 'mongod --dbpath /mongodb/data --logpath /mongodb/log/mongo.log &'; bash -l -c 'cd ~/errbit; rake errbit:bootstrap';
 
 # Launch rails server
-ENTRYPOINT bash -l -c 'cd ~/errbit; script/rails server'
+# ENTRYPOINT bash -l -c 'cd ~/errbit; script/rails server'
 
 # Expose rails server port
 EXPOSE 3000
